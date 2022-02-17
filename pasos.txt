@@ -1,0 +1,42 @@
+crear dentro de app
+  mapas
+    components
+    pages
+
+  shared
+
+crear modulo de mapas
+  ng g m mapas --routing
+
+
+componentente mimiMapa
+  ng g c mapas/components/miniMapa --skip-Tests -is
+
+componentente fullScreen
+  ng g c mapas/pages/fullScreen --skip-Tests -is
+  ng g c mapas/pages/marcadores --skip-Tests -is
+  ng g c mapas/pages/zoomRange --skip-Tests -is
+  ng g c mapas/pages/propiedades --skip-Tests -is
+
+componentente menu
+  ng g c shared/menu --skip-Tests -is
+
+
+agregar variables de entrno en environment
+  mapboxToken: ''
+
+agregar estilos de mapbox al index
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+
+
+agregar dependencia de mapbox
+  npm install mapbox-gl --save
+
+agregar compatibilidad de mapbox con typescript
+  npm i --save-dev @types/mapbox-gl
+
+  en el componente agregar
+    import * as mapboxgl  from 'mapbox-gl';
+
+
+AfterViewInit => despues de inicializar el componente
